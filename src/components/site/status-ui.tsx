@@ -66,7 +66,7 @@ export function useTimer(running: boolean, since?: string) {
   return `${String(Math.floor(secs / 60)).padStart(2, "0")}:${String(secs % 60).padStart(2, "0")}`;
 }
 
-export function CallCard({ status, since, fixedDuration }: { status: AppointmentStatus; since?: string; fixedDuration?: string }) {
+export function CallCard({ status, since, fixedDuration }: { status: AppointmentStatus; since?: string | undefined; fixedDuration?: string | undefined }) {
   const live = status === "CALLING" || status === "CONNECTED" || status === "COLLECTING_DETAILS";
   const t = useTimer(live && !fixedDuration, since);
   return (

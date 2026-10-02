@@ -45,7 +45,7 @@ function rawFromDate(d: Date) {
 }
 function dateFromRaw(raw: string) {
   const [y, m, d] = raw.split("-").map(Number);
-  return new Date(y, m - 1, d);
+  return new Date(y!, m! - 1, d!);
 }
 
 function validate(f: Form): Partial<Record<keyof Form, string>> {
@@ -271,7 +271,7 @@ export function BookingForm() {
   );
 }
 
-function Field({ id, label, error, hint, optional, children }: { id: string; label: string; error?: string; hint?: string; optional?: boolean; children: React.ReactNode }) {
+function Field({ id, label, error, hint, optional, children }: { id: string; label: string; error?: string | undefined; hint?: string | undefined; optional?: boolean; children: React.ReactNode }) {
   return (
     <div>
       <Label htmlFor={id} className="mb-2 block">

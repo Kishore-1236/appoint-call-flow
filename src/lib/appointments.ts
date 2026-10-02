@@ -114,12 +114,12 @@ export function todayRaw(): string {
 export function formatDateRaw(raw: string): string {
   const [y, m, d] = raw.split("-").map(Number);
   const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  return `${months[m - 1]} ${d}, ${y}`;
+  return `${months[m! - 1]} ${d}, ${y}`;
 }
 
 /** "14:30" -> "2:30 PM" */
 export function formatTime24(t: string): string {
-  const [h, m] = t.split(":").map(Number);
+  const [h = 0, m = 0] = t.split(":").map(Number);
   const suffix = h >= 12 ? "PM" : "AM";
   const h12 = h % 12 === 0 ? 12 : h % 12;
   return `${h12}:${String(m).padStart(2, "0")} ${suffix}`;
