@@ -29,7 +29,7 @@ export function Navbar() {
         <Logo />
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           {links.map((l) => (
-            <Link key={l.label} to={l.to} hash={l.hash} className="transition-colors hover:text-foreground">
+            <Link key={l.label} to={l.to} {...(l.hash ? { hash: l.hash } : {})} className="transition-colors hover:text-foreground">
               {l.label}
             </Link>
           ))}
@@ -46,7 +46,7 @@ export function Navbar() {
       {open && (
         <div className="border-t border-border px-5 py-3 md:hidden">
           {links.map((l) => (
-            <Link key={l.label} to={l.to} hash={l.hash} onClick={() => setOpen(false)} className="block py-2 text-sm">
+            <Link key={l.label} to={l.to} {...(l.hash ? { hash: l.hash } : {})} onClick={() => setOpen(false)} className="block py-2 text-sm">
               {l.label}
             </Link>
           ))}
@@ -69,7 +69,7 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap gap-6 text-sm text-muted-foreground">
           {links.map((l) => (
-            <Link key={l.label} to={l.to} hash={l.hash} className="hover:text-foreground">
+            <Link key={l.label} to={l.to} {...(l.hash ? { hash: l.hash } : {})} className="hover:text-foreground">
               {l.label}
             </Link>
           ))}

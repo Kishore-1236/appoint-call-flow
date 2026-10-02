@@ -237,7 +237,7 @@ export function BookingForm() {
                   )}
                 >
                   <span className="block font-medium">{title}</span>
-                  <span className="text-xs text-muted-foreground">{span.replace(")", "")}</span>
+                  <span className="text-xs text-muted-foreground">{(span ?? "").replace(")", "")}</span>
                 </button>
               );
             })}
