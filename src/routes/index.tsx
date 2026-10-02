@@ -103,7 +103,7 @@ function Home() {
                 </div>
                 <div className="mt-5"><ProgressSteps step={1} /></div>
               </div>
-              <div className="md:ml-10"><CallCard status="COLLECTING_DETAILS" /></div>
+              <div className="md:ml-10"><CallCard status="COLLECTING_DETAILS" fixedDuration="00:18" /></div>
             </div>
           </div>
         </section>
