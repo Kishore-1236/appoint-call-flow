@@ -19,7 +19,7 @@ const Payload = z.object({
 });
 
 export type WebhookResult =
-  | { ok: true; status: number; appointment_id?: string }
+  | { ok: true; status: number; appointment_id?: string | undefined }
   | { ok: false; status: number; error: string };
 
 export const submitToWebhook = createServerFn({ method: "POST" })

@@ -244,14 +244,14 @@ function Home() {
         {/* FAQ */}
         <Section eyebrow="FAQ" title="Common questions">
           <Accordion type="single" collapsible className="max-w-3xl">
-            {[
+            {([
               ["How soon will I get a call?", "Usually within a few minutes of submitting your request."],
               ["Who will be calling me?", "The call comes from the AppointFlow Assistant, an automated calling assistant that confirms your appointment details."],
               ["What if I miss the call?", "Your status will show \"No Answer\" and we'll try reaching you again."],
               ["Can I change my appointment time?", "Yes. Just tell the assistant during the call and your request will be marked for rescheduling."],
               ["How do I check my appointment status?", "Open the Status page and search by your appointment ID or phone number."],
               ["Is my information kept private?", "Your details are only used to schedule and confirm your appointment."],
-            ].map(([q, a]) => (
+            ] as const).map(([q, a]) => (
               <AccordionItem key={q} value={q}>
                 <AccordionTrigger className="text-left">{q}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">{a}</AccordionContent>
